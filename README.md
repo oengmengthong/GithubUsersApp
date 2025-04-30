@@ -38,8 +38,11 @@ A SwiftUI iOS app that lists GitHub users using the GitHub REST API. Includes in
 .
 ├── Models
 │   ├── GitHubUser.swift
-│   ├── GitHubUserDTO.swift
-│   └── GitHubUserDetailDTO.swift
+├── Networking
+│   └── DTOs
+│       ├── GitHubUserDTO.swift
+│       ├── GitHubSearchResponse.swift
+│       └── GitHubUserDetailDTO.swift
 ├── ViewModels
 │   ├── UserListViewModel.swift
 │   └── UserDetailViewModel.swift
