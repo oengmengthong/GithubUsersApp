@@ -65,9 +65,16 @@ struct UserListScreen: View {
 
     @ViewBuilder
     private func destinationView() -> some View {
-        if case let .userDetail(user) = coordinator.route {
-            UserDetailScreen(user: user, viewModel: viewModel)
-        }
+        switch coordinator.route {
+            case .userDetail(let user):
+                UserDetailScreen(user: user, viewModel: viewModel)
+
+            case .deeplinkedUser(let username):
+                UserDetailScreen(user: GitHubUser(id: 0, login: username, avatar_url: ""), viewModel: viewModel)
+
+            case .none:
+                EmptyView()
+            }
     }
 
     private func share(user: GitHubUser) {

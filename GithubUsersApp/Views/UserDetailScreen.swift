@@ -82,7 +82,8 @@ struct UserDetailScreen: View {
     }
 
     private func share(user: GitHubUser) {
-        let url = URL(string: "https://github.com/\(user.login)")!
+        let url = URL(string: "githubusers://user/\(user.login)")!
+//        let url = URL(string: "https://github.com/\(user.login)")!
         let av = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootVC = windowScene.windows.first?.rootViewController {

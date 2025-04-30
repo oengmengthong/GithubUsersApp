@@ -9,6 +9,7 @@ import Foundation
 
 enum AppRoute {
     case userDetail(GitHubUser)
+    case deeplinkedUser(String)
 }
 
 final class AppCoordinator: ObservableObject {
